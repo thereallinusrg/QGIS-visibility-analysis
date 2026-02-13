@@ -43,6 +43,7 @@ from .algorithms.viewshed_raster import ViewshedRaster
 from .algorithms.viewshed_intervisibility import Intervisibility
 from .algorithms.viewshed_index import VisibilityIndex
 from .algorithms.move_points import MovePoints
+from .algorithms.viewshed_batch import ViewshedBatch
 
 
 class VisibilityProvider(QgsProcessingProvider):
@@ -82,7 +83,7 @@ class VisibilityProvider(QgsProcessingProvider):
 
         for alg in [ViewshedPoints(), ViewshedRaster(),
                     Intervisibility() , VisibilityIndex(), 
-                    MovePoints()]: self.addAlgorithm( alg )
+                    MovePoints(), ViewshedBatch()]: self.addAlgorithm( alg )
             
     def isActive(self):
         """Return True if the provider is activated and ready to run algorithms"""
